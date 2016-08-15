@@ -37,7 +37,7 @@ function GlueArrays(array1, array2){
 }
 
 function GetArray(){
-	var answer = prompt("Enter 10 numbers, please:", "1 2 ...");
+	var answer = prompt("Enter your numeric array, please:", "1,11,7,...");
 	var array = [];
 	array = answer.split(',');
 	var sorted_array = MergeSort(array);
