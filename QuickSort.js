@@ -2,38 +2,39 @@ function QuickSort(array, left, right){
 	var Left = left;
 	var Right = right;
 	var middle;
-	
-	if(right > left){
-		middle =  array[(left + right) / 2];
-		while(Left <= Right){
-			while( (Left < right ) && (Number(array[Left]) < Number(middle) ) )
-				Left++;
-			while( (Right > left) && (Number(array[Right]) > Number(middle) ) )
-				Right--;
+  var l_plus_r = left + right;
+	middle =  array[(l_plus_r - l_plus_r % 2) / 2];
+  console.log(middle);
+	while(Left <= Right){
+		while( (Left < right ) && (array[Left] < middle  ) )
+			Left++;
+		while( (Right > left) && (array[Right] > middle ) )
+			Right--;
+		
+		if(Left <= Right){
+      console.log(array[Left], array[Right]);
+			var temp = array[Left];
+			array[Left] = array[Right];
+			array[Right] = temp;
 			
-			if(Left <= Right){
-				var temp = array[Left];
-				array[Left] = array[Right];
-				array[Right] = temp;
-				
-				Left++;
-				Right--;
-			}
+			Left++;
+			Right--;
 		}
-			
-		if (Left < right)
-			QuickSort(array, Left, right);
-		if (Right > left)
-			QuickSort(array, left, Right);
-	
+    console.log(array);
 	}
+
+	if (Left <= right)
+		QuickSort(array, Left, right);
+	if (Right >= left)
+		QuickSort(array, left, Right);
 }
 
 function GetQuickSortedArray(){
 	var array_input = document.getElementById("array_input");
 	var array = array_input.value;
-	array = array.split(',');
-	QuickSort(array,0, array.length - 1);
+	array = array.split(',').map(Number);
+  console.log(array);
+	QuickSort(array, 0, array.length - 1);
 	var sorted_array = array;
 	array_input.value = sorted_array.toString();
 }
