@@ -2,10 +2,15 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Test1</title>
+		<link href="styles.css" rel="stylesheet">
 		<script src="MergeSort.js"></script>
+		<script src="QuickSort.js"></script>
+		<title>Test1</title>
 	</head>
-	<body onload="GetArray()">
-		
+	<body>
+		<h2>Entre your array...</h2>
+		<input type="text" id="array_input"><br />
+		<input type="submit" value="Merge Sort" onclick="GetMergeSortedArray()"><br />
+		<input type="submit" value="Quick Sort" onclick="GetQuickSortedArray()">
 	</body>
 </html>

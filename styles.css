@@ -1,0 +1,20 @@
+body {
+    background-color: #ddffdd;
+    text-align: center;
+    margin-top: 15%;
+    font-family: Verdana;
+    font-size: 20px;
+}
+
+input[type='text'] {
+	height: 30px;
+	font-size: 20px;
+	padding-left: 10px; 
+	margin: 5px;
+}
+
+input[type='submit'] {
+	background-color: #fff222;
+	height: 30px;
+	margin: 5px;
+}

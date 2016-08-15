@@ -36,10 +36,10 @@ function GlueArrays(array1, array2){
 	return result;
 }
 
-function GetArray(){
-	var answer = prompt("Enter your numeric array, please:", "1,11,7,...");
-	var array = [];
-	array = answer.split(',');
+function GetMergeSortedArray(){
+	var array_input = document.getElementById("array_input");
+	var array = array_input.value;
+	array = array.split(',');
 	var sorted_array = MergeSort(array);
-	alert(sorted_array.toString());
+	array_input.value = sorted_array.toString();
 }
